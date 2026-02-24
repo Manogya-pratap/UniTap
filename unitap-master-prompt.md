@@ -7,10 +7,12 @@ UniTap is a campus fintech platform designed for 100,000 users. It provides inte
 
 ## 2. System Architecture
 - **Backend**: Spring Boot 3.2, Java 17, Microservices.
+- **Edge Layer**: **Kong API Gateway** (Konnect) for bank-grade security and perimeter control.
 - **Frontend**: Flutter 3.16 (Mobile), Next.js 14 (Dashboards).
 - **Data**: PostgreSQL 15 (ACID), Redis 7 (Locking/Cache), Kafka 3.6 (Events), ClickHouse (Analytics).
 
 ## 3. Core Security Mechanisms
+- **Bank-Grade Perimeter**: Kong Gateway with Mutual TLS (mTLS), HMAC Signature Verification, and IP Restriction for bank and third-party interactions.
 - **Triple-Locking Wallet**: Idempotency Key -> Redis Distributed Lock -> DB Pessimistic Lock (Serializable).
 - **NFC Anti-Replay**: 5-minute nonce window + SHA-256 hashing of card tokens.
 - **QR Secure Session**: Time-limited, encrypted QR codes for off-campus payments and fallback.
@@ -24,9 +26,10 @@ UniTap is a campus fintech platform designed for 100,000 users. It provides inte
 
 ## 5. Development Prompts
 Refer to the provided documentation to generate:
-- Terraform infrastructure for AWS ap-south-1.
+- Terraform infrastructure for AWS ap-south-1 (VPC, EKS, RDS, Redis, Kafka, and **Kong Gateway**).
 - Flyway SQL migrations with monthly partitioning for the ledger.
 - Wallet Service implementation with the 9-step debit flow and QR support.
+- **Kong Configuration (Declarative/deck)**: Custom plugins for HMAC validation and mTLS setup.
 - Flutter Student App with Clean Architecture, Riverpod, and **QR Payment Scanner**.
 - React Admin Dashboards with Next.js and Ant Design.
 - Merchant POS app with **QR Code Generator** for receiving payments.

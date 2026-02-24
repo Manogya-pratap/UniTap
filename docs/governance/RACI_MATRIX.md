@@ -21,6 +21,7 @@ Avoid **liability confusion** (this kills partnerships).
 | Fraud alerts           | **R** | **A**  | I       |
 | Student KYC            | **R** | **A**  | I       |
 | Data privacy           | **A** | **R**  | **R**   |
+| **Gateway Security (mTLS)** | **R/A** | **R/A** | I       |
 
 **Legend**
 * **R** = Responsible

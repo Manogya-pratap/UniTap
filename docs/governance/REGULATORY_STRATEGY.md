@@ -22,12 +22,14 @@ Avoid **premature regulation** while staying compliant.
 * Basic KYC
 * Alumni enablement
 * Expansion to local merchants near campus
+* **Kong Gateway Security**: Begin mTLS/HMAC integration with Bank partners.
 
 ### Phase 3 – Open Wallet / Transit (Use Everywhere)
 * Full KYC
 * Metro/Transit integration
 * National rollout
 * **Mobile App QR Code payment enabled for off-campus merchants**
+* **Bank-Grade Infrastructure**: Full Kong Konnect implementation for real-time bank approvals and settlements.
 
 ---
 
