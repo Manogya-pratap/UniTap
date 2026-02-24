@@ -13,18 +13,20 @@ UniTap is a campus fintech platform designed for 100,000 users. It provides inte
 ## 3. Core Security Mechanisms
 - **Triple-Locking Wallet**: Idempotency Key -> Redis Distributed Lock -> DB Pessimistic Lock (Serializable).
 - **NFC Anti-Replay**: 5-minute nonce window + SHA-256 hashing of card tokens.
+- **QR Secure Session**: Time-limited, encrypted QR codes for off-campus payments and fallback.
 
 ## 4. Services Overview
 - **Auth Service**: JWT/OTP/Refresh tokens.
-- **Wallet Service**: Ledger-based transactions with strong consistency.
+- **Wallet Service**: Ledger-based transactions with strong consistency. Support for QR-based debit requests.
 - **NFC Service**: Secure card verification and device management.
 - **Attendance Service**: Event-driven tracking with fraud detection.
-- **Admin/Campus Service**: Management portal backend.
+- **Payment/QR Service**: Generation and validation of secure payment QR codes.
 
 ## 5. Development Prompts
 Refer to the provided documentation to generate:
 - Terraform infrastructure for AWS ap-south-1.
 - Flyway SQL migrations with monthly partitioning for the ledger.
-- Wallet Service implementation with the 9-step debit flow.
-- Flutter Student App with Clean Architecture and Riverpod.
+- Wallet Service implementation with the 9-step debit flow and QR support.
+- Flutter Student App with Clean Architecture, Riverpod, and **QR Payment Scanner**.
 - React Admin Dashboards with Next.js and Ant Design.
+- Merchant POS app with **QR Code Generator** for receiving payments.
